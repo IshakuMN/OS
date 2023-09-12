@@ -1,0 +1,16 @@
+ 1023  nano ex1.sh
+ 1024  chmod +x ex1.sh
+ 1025  ./ex1.sh
+ 1026  cat ~/week01/ex1.txt
+ 1027  ls
+ 1028  cd ex1
+ 1029  cd /ex1
+ 1030  open .txt
+ 1031  open ex1.txt
+ 1032  open ex1.sh
+ 1033  echo "Hello, Ishaku\n\necho "Hello, world\!"\nhtheh \nclear
+ 1034  echo "Hello Ishaku"
+ 1035  pwd
+ 1036  ls -1
+ 1037  ls
+ 1038  date
