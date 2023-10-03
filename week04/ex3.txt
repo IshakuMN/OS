@@ -1,0 +1,7 @@
+When you run the program with n=3, it will create a total of 7 processes. Here's the breakdown:
+The initial parent process (created when you run the program).
+Three child processes created by the first three iterations of the fork() loop.
+Three more child processes created by the second fork() loop inside the child processes of the first loop.
+
+When you run the program with n=5, it will create a total of 31 processes. The pattern is similar, but it will create more child processes.
+The reason for this behavior is that each fork() call duplicates the current process, creating a new child process. So, when you have nested fork() calls or a loop, the number of processes can grow exponentially. In the case of n=3, you have 2^n - 1 = 2^3 - 1 = 7 processes. For n=5, you have 2^5 - 1 = 31 processes.
