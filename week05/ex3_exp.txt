@@ -1,0 +1,11 @@
+In this experiment, we used the program from exercise 3 to calculate the number of prime numbers in the range [0, 10000000) for different values of 'm' (the number of threads). The results are as follows:
+
+- For 'm=1', it took approximately 3.078 seconds to compute.
+- For 'm=2', the execution time decreased to around 1.438 seconds.
+- With 'm=4' threads, the execution time reduced further to approximately 0.801 seconds.
+- For 'm=10', it decreased even more to about 0.538 seconds.
+- Finally, with 'm=100' threads, the execution time was approximately 0.476 seconds.
+
+From these results, we observe that as the number of threads ('m') increases, the execution time decreases significantly. This behavior indicates that distributing the computation of prime numbers across multiple threads can lead to better performance and faster execution times. However, it's important to note that there is an optimal number of threads for a given task, and beyond that point, adding more threads may not provide further performance improvements and may even introduce overhead.
+
+Overall, the experiment demonstrates the benefits of parallelizing prime number computation using multi-threading, and it highlights the importance of choosing an appropriate number of threads based on the specific workload and system capabilities.

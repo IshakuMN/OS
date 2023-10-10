@@ -1,0 +1,22 @@
+Comparison of Results between Exercise 3 and Exercise 4
+
+Exercise 3:
+- Running with n=10000000 and m=1: real 0m3.078s
+- Running with n=10000000 and m=2: real 0m1.438s
+- Running with n=10000000 and m=4: real 0m0.801s
+- Running with n=10000000 and m=10: real 0m0.538s
+- Running with n=10000000 and m=100: real 0m0.476s
+
+Exercise 4:
+- Running with n=10000000 and m=1: Total primes in [0, 10000000) = 664579
+- Running with n=10000000 and m=2: Total primes in [0, 10000000) = 664579
+- Running with n=10000000 and m=4: Total primes in [0, 10000000) = 664579
+- Running with n=10000000 and m=10: Total primes in [0, 10000000) = 664579
+- Running with n=10000000 and m=100: Total primes in [0, 10000000) = 664579
+
+Explanation:
+In Exercise 3, the program splits the computation into multiple threads, and the execution time decreases as the number of threads (m) increases. This is due to the parallel processing of the prime checking tasks.
+
+In Exercise 4, a different approach was used to distribute the computation among threads, but it does not significantly improve the execution time compared to Exercise 3. Both exercises achieved the same result in terms of the total number of primes found in the given range.
+
+It appears that Exercise 3, which divides the range of numbers more evenly among threads, is slightly more efficient in terms of execution time compared to the approach used in Exercise 4. This demonstrates the importance of load balancing when parallelizing tasks.
