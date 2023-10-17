@@ -1,0 +1,3 @@
+1. When TRIBASE is small like 100, the scheduler will find triangular numbers very quickly since the range to search is smaller. With larger TRIBASE like 1000000, it will take longer to find triangular numbers.
+
+2. If arrival times of all processes are 0, they will be executed in order of their process ID (idx).
