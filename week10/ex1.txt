@@ -1,0 +1,34 @@
+1. Creation of Files and Hard Links:
+
+Description: The ex1.c program created a file myfile1.txt and two hard links myfile11.txt and myfile12.txt.
+Observation: monitor.c reported the creation of these files and hard links.
+Justification: The IN_CREATE event is triggered by inotify when new files or hard links are created in the watched directory.
+
+2. Finding Hard Links:
+
+Description: The function find_all_hlinks in ex1.c searched for and listed all hard links to myfile1.txt.
+Observation: No direct observation from monitor.c as this operation does not alter the file system in a way that inotify would detect.
+
+3. Modification of Hard Link:
+
+Description: Moved myfile1.txt to /tmp and modified myfile11.txt.
+Observation: monitor.c should report the modification of myfile11.txt.
+Justification: The IN_MODIFY event is triggered because the content of myfile11.txt was altered.
+
+4. Symbolic Link Creation and Modification:
+
+Description: Created a symbolic link myfile13.txt to /tmp/myfile1.txt and modified /tmp/myfile1.txt.
+Observation: monitor.c might not report the modification of the symbolic link target /tmp/myfile1.txt if /tmp is outside the monitored directory.
+Justification: Modifications to the target of a symbolic link are not detected by inotify if the target is outside the monitored directory.
+
+5. Removing Duplicate Hard Links:
+
+Description: Used unlink_all to remove duplicates of myfile11.txt, keeping one hard link.
+Observation: monitor.c should report the deletion of the duplicate hard links.
+Justification: The IN_DELETE event is triggered for each hard link removal within the watched directory.
+
+6. Examination of Hard Link Count:
+
+Description: After removal of duplicate links, checked the number of hard links for the remaining file.
+Observation: The number of hard links should decrease appropriately.
+Explanation: As hard links are removed, the link count of the inode decreases.
