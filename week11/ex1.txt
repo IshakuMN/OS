@@ -1,0 +1,11 @@
+Findings:
+
+1. The output inside the chroot environment is different from the output outside the chroot environment. This is because chroot changes the apparent root directory for the current running process and its children, creating an isolated environment.
+
+2. In the chroot environment, the listed contents are those of the mounted loop file system (./lofsdisk). This only includes the files and directories that were manually added to the loop file system, such as 'file1', 'file2', and the necessary binaries and libraries.
+
+3. Outside the chroot environment, the program lists the contents of the actual root directory of the host file system. This includes typical directories and files found in a Linux root file system such as 'bin', 'dev', 'home', 'usr', etc.
+
+4. This demonstrates how chroot can be used to create a restricted view of the file system, which can be useful for security and isolation purposes, such as running a potentially untrusted program without giving it access to the entire file system.
+
+5. One notable limitation of chroot is that it does not provide complete isolation. Processes running as root could potentially escape the chroot environment.
