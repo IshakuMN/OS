@@ -1,0 +1,22 @@
+Thread 0 created
+Mutexes held by thread 0: 
+
+Thread 0 tries to lock mutex 2
+Thread 0 unlocked mutex 2
+
+Thread 1 created
+Mutexes held by thread 1: 
+
+Thread 1 tries to lock mutex 0
+Thread 1 unlocked mutex 0
+
+Thread 2 created  
+Mutexes held by thread 2:
+
+Thread 2 tries to lock mutex 1
+Deadlock detected
+Thread statuses:
+Thread 0: 
+Thread 1: 0
+Thread 2: 
+Thread 3:
